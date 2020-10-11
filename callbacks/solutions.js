@@ -296,7 +296,11 @@ function rating(arrOfFuncs, value) {
 // console.log(rating(checks, 66)); // should log: 75
 
 // Challenge 20
-function pipe(arrOfFuncs, value) {}
+function pipe(arrOfFuncs, value) {
+  return reduce(arrOfFuncs, (acc, curr) => {
+    return curr(acc)
+  }, value);
+}
 
 // /*** Uncomment these to check your work! ***/
 // const capitalize = str => str.toUpperCase();
@@ -307,13 +311,14 @@ function pipe(arrOfFuncs, value) {}
 
 // Challenge 21
 function highestFunc(objOfFuncs, subject) {
-  let obj = { key: null, output: null };
-  Object.keys(objOfFuncs).forEach((func) => {
-    const output = objOfFuncs[func](subject);
-    if (output > obj.output) obj = { key: func, output };
-  });
-
-  return obj.key;
+  return reduce(Object.keys(objOfFuncs), (acc, curr) => {
+    if (!acc.key || acc.value < objOfFuncs[curr](subject)) {
+      acc.key = curr;
+      acc.value = objOfFuncs[curr](subject);
+      return acc;
+    }
+    return acc;
+})
 }
 
 // /*** Uncomment these to check your work! ***/
