@@ -11,6 +11,7 @@ function testMe() {
 // After thinking it through, uncomment the following line to check your guess!
 // testMe(); // what order should these log out? Howdy or Partnah first?
 
+
 /* CHALLENGE 2 */
 
 function delayedGreet() {
@@ -18,6 +19,7 @@ function delayedGreet() {
 }
 // Uncomment the following line to check your work!
 // delayedGreet(); // should log (after 3 seconds): welcome
+
 
 /* CHALLENGE 3 */
 
@@ -27,6 +29,7 @@ function helloGoodbye() {
 // Uncomment the following line to check your work!
 // helloGoodbye(); // should log: hello // should also log (after 3 seconds): good bye
 
+
 /* CHALLENGE 4 */
 
 function brokenRecord() {
@@ -35,6 +38,7 @@ function brokenRecord() {
 // Uncomment the following line to check your work!
 // brokenRecord(); // should log (every second): hi again
 
+
 /* CHALLENGE 5 */
 
 function limitedRepeat() {
@@ -42,6 +46,7 @@ function limitedRepeat() {
 }
 // Uncomment the following line to check your work!
 // limitedRepeat(); // should log (every second, for 5 seconds): hi for now
+
 
 /* CHALLENGE 6 */
 
@@ -54,9 +59,12 @@ function everyXsecsForYsecs() {
 // }
 // everyXsecsForYsecs(theEnd, 2, 20); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
 
+
 /* CHALLENGE 7 */
 
-function delayCounter(target, wait) {}
+function delayCounter(target, wait) {
+
+}
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
 // const countLogger = delayCounter(3, 1000)
@@ -67,13 +75,13 @@ function delayCounter(target, wait) {}
 
 /* CHALLENGE 8 */
 
-function promised(val) {
+function promised (val) {
   // ADD CODE HERE
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
 // const createPromise = promised('wait for it...');
-// createPromise.then((val) => console.log(val));
+// createPromise.then((val) => console.log(val)); 
 // will log "wait for it..." to the console after 2 seconds
 
 /* CHALLENGE 9 */
@@ -107,3 +115,4 @@ function debounce(callback, interval) {
 // setTimeout(function() { console.log(giveHiSometimes()); }, 2000); // -> undefined
 // setTimeout(function() { console.log(giveHiSometimes()); }, 4000); // -> undefined
 // setTimeout(function() { console.log(giveHiSometimes()); }, 8000); // -> 'hi'
+
