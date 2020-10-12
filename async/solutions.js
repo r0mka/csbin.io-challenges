@@ -43,16 +43,12 @@ function brokenRecord() {
 
 function limitedRepeat() {
   // ADD CODE HERE
-  let secs;
-  const timerId = setInterval(() => {
-    if (!secs) secs = 0;
-    if (secs >= 5) {
-      clearInterval(timerId);
-      return;
-    }
-    secs++;
-    console.log('hi');
-  }, 1000);
+  let count = 0;
+  const id = setInterval(() => {
+    console.log('hi for now');
+    count++;
+    if (count === 5) clearInterval(id);
+  }, 1000)
 }
 // Uncomment the following line to check your work!
 // limitedRepeat(); // should log (every second, for 5 seconds): hi for now
@@ -61,15 +57,12 @@ function limitedRepeat() {
 
 function everyXsecsForYsecs(func, interval, duration) {
   // ADD CODE HERE
-  let time = 0;
-  const timerId = setInterval(() => {
-    time += interval;
-    if (time > duration) {
-      clearInterval(timerId);
-      return;
-    }
+  let millisecs = 0;
+  const id = setInterval(() => {
     func();
-  }, interval);
+    millisecs+=interval;
+    if (millisecs === duration) clearInterval(id);
+  }, interval, duration);
 }
 // Uncomment the following lines to check your work!
 function theEnd() {
@@ -119,19 +112,19 @@ class SecondClock {
   constructor(cb) {
     // ADD CODE HERE
     this.cb = cb;
-    this.value = 0;
+    this.seconds = 0;
+    
   }
   // ADD METHODS HERE
   start() {
-    this.timerId = setInterval(() => {
-      this.value++;
-      this.cb(this.value);
-    }, 1000);
+    this.id = setInterval(() => {
+      this.seconds++;
+      this.cb(this.seconds)
+    }, 1000)
   }
-
   reset() {
-    clearInterval(this.timerId);
-    this.value = 0;
+    this.seconds = 0;
+    clearInterval(this.id);
   }
 }
 
